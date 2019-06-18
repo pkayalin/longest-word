@@ -23,9 +23,7 @@ class Game:
                 return False
         return self.__check_dictionary(word)
 
-    def __check_dictionary(self, word):
+    def __check_dictionary(self,word):
         r = requests.get(f"https://wagon-dictionary.herokuapp.com/{word}")
         response = r.json()
-        print (word)
         return response.get('found',False)
-        #return response['found']
